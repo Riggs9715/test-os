@@ -1,8 +1,10 @@
 # test-os &nbsp; [![bluebuild build badge](https://github.com/riggs9715/test-os/actions/workflows/build.yml/badge.svg)](https://github.com/riggs9715/test-os/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+Bluebuild image using Umbriel and Noctalia.
 
-After setup, it is recommended you update this README to describe your custom image.
+If you stumbled upon this repo and think you want to install this, trust me, you dont.
+This is my way of learning things. while technically I am aiming for this to be functional, the overwhelming likelyhood is that this is fundamentally broken in some way.
+
 
 ## Installation
 
