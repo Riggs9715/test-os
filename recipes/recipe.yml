@@ -19,8 +19,8 @@ modules:
 
   - type: dnf
     repos:
-      files: # terra repo for umbriel
-        https://repos.fyralabs.com/terra$releasever
+      files:
+        https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
       copr:
         - atim/starship
     install:
