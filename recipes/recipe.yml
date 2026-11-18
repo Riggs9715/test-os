@@ -6,7 +6,7 @@ name: test-os
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/blue-build/base-images/fedora-base
+base-image: ghcr.io/blue-build/base-images/fedora-base-nvidia-open
 image-version: latest # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
@@ -19,12 +19,16 @@ modules:
 
   - type: dnf
     repos:
+      files: # terra repo for umbriel
+        https://repos.fyralabs.com/terra$releasever
       copr:
         - atim/starship
     install:
       packages:
+        - umbriel-nightly
         - micro
         - starship
+        - alacritty
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -35,11 +39,9 @@ modules:
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
+        scope: user
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
